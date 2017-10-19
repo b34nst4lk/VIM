@@ -10,5 +10,13 @@ imap <down> <nop>
 imap <left> <nop> 
 imap <right> <nop>
 
-" Set tab behavior
+" Set tab behavior (tabs automatically becomes space)
 set tabstop=4 shiftwidth=4 expandtab
+
+" Editor options
+set number numberwidth=5
+
+highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey 
+
+" Plugins
+" Plugin 'vim/vim-airline'
