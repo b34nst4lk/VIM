@@ -5,8 +5,9 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+set rtp+=~/jack_config/VIM/.vim/bundle/Vundle.vim
+call vundle#begin('~/jack_config/VIM/.vim/bundle/Vundle.vim')
+
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
@@ -37,16 +38,23 @@ filetype plugin indent on    " required
 set t_Co=256
 
 " Disable arrow keys in NORMAL mode
-map <up> <nop> 
-map <down> <nop> 
-map <left> <nop> 
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
 map <right> <nop>
 
 " Disable arrow keys in INSERT mode
 imap <up> <nop>
 imap <down> <nop>
-imap <left> <nop> 
+imap <left> <nop>
 imap <right> <nop>
+
+" Save current working file
+map <C-s> :w<CR>
+imap <C-s> <Esc>:w<CR>
+
+" Cut line
+map <C-x> <Esc>-1v$x
 
 " Set tab behavior (tabs automatically becomes space)
 set tabstop=4 shiftwidth=4 expandtab
@@ -56,13 +64,13 @@ set autoindent
 set number numberwidth=5
 set relativenumber
 
-highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey 
+highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey
 
 " Colorscheme
-colorscheme onedark
+colorscheme DimGrey
 
 " Airline colorscheme
-"let g:airline_theme='onedark'
+let g:airline_theme='apprentice'
 """"""""""""""""""""""""""""""""""""
 " NERDTree customization
 """"""""""""""""""""""""""""""""""""

@@ -3,10 +3,7 @@
 # for examples
 
 # If not running interactively, don't do anything
-case $- in
-    *i*) ;;
-      *) return;;
-esac
+[ -z "PS1"  ] && return
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -119,10 +116,21 @@ fi
 let x=$RANDOM%2
 
 # Fortune cookie from cow or tuxedo penguin
-if (($x == 0)); then
-    fortune | cowsay
-else
-    fortune | cowsay -f tux
-fi
+# if (($x == 1)); then
+#     fortune | cowsay
+# else
+#     fortune | cowsay -f tux
+# fi
 
+# Custom command-line commands
+## cd $1 will cd into the target directory, and call ls -a -l
+function cd () {
+    new_directory="$*";
+    if [ $# -eq 0 ]; then
+        new_directory=${HOME};
+    fi;
+    builtin cd "${new_directory}" && ls -a -l
+}
 
+## tmux commands
+alias tmd="tmux detach"
