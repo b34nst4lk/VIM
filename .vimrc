@@ -54,7 +54,6 @@ map <C-s> :w<CR>
 imap <C-s> <Esc>:w<CR>
 
 " Cut line
-map <C-x> <Esc>-1v$x
 
 " Set tab behavior (tabs automatically becomes space)
 set tabstop=4 shiftwidth=4 expandtab
@@ -70,7 +69,7 @@ highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey
 colorscheme DimGrey
 
 " Airline colorscheme
-let g:airline_theme='apprentice'
+let g:airline_theme='dark'
 """"""""""""""""""""""""""""""""""""
 " NERDTree customization
 """"""""""""""""""""""""""""""""""""

@@ -89,6 +89,9 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
+# tmux aliases
+alias tmux='tmux -2'
+
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
@@ -126,10 +129,7 @@ let x=$RANDOM%2
 ## cd $1 will cd into the target directory, and call ls -a -l
 function cd () {
     new_directory="$*";
-    if [ $# -eq 0 ]; then
-        new_directory=${HOME};
-    fi;
-    builtin cd "${new_directory}" && ls -a -l
+    builtin cd "${new_directory}" && ls -l -a
 }
 
 ## tmux commands
